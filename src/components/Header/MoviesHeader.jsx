@@ -1,3 +1,4 @@
+import React from 'react';
 import './MoviesHeader.css';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo.svg';
