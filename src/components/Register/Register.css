@@ -1,0 +1,173 @@
+/* .register {
+    display: flex;
+    flex-direction: column;
+    margin: 70px auto 0;
+    width: 396px;
+  }
+  
+  .register__logo {
+    width: 38px;
+    height: 38px;
+    background-image: url("../../images/logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.2s ease;
+  }
+  
+  .register__logo:hover {
+    opacity: .8;
+    transform: scale(1.1);
+    box-shadow: 0 0 7px rgba(245, 245, 245, 1);
+  }
+  
+  .register__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    color: black;
+    margin: 40px 0;
+  }
+  
+  .register__email-input-label,
+  .register__password-input-label,
+  .register__name-input-label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #A0A0A0;
+  }
+  
+  .register__email-input,
+  .register__password-input,
+  .register__name-input {
+    padding: 15px;
+    border: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.94px;
+    margin: 10px 0 0px;
+    color: black;
+    border: 1px solid transparent;
+    border-bottom-color: #A0A0A0;
+  }
+  
+  .register__email-input:focus, .register__password-input:focus, .register__name-input:focus {
+    border-bottom-color:#2BE080;
+    outline: 0;
+  }
+/*   
+  .register__button {
+    padding: 15px 0;
+    background-color: #2BE080;
+    border: 0;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  .register__button_disabled {
+    background-color: rgba(248, 248, 248, 1);
+    color: rgba(0, 0, 0, 1);
+    pointer-events: none;
+  }
+  
+  .register__button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  
+  .register__link-title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(139, 139, 139, 1);
+    margin: 0 auto;
+    padding: 16px 0 0px;
+  }
+  
+  .register__link {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: 0;
+    color: #2BE080;
+    margin-left: 6px;
+  }
+  
+  .register__error-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(238, 52, 101, 1);
+    margin: 0 auto;
+    opacity: 0;
+    visibility: hidden;
+    margin: 49px auto 10px;
+  }
+  
+  .register__error-text_visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .register__link:hover {
+    opacity: 0.8;
+  }
+  
+  .register__form-input-error {
+    display: inline-block;
+    color: #ee3465;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 20px;
+    margin-bottom: 8px;
+    opacity: 0;
+    visibility: hidden;
+    min-height: 20px;
+  }
+  
+  .register__form-input-error_visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  @media screen and (max-width: 425px) {
+    .register {
+      margin: 56px auto 30px;
+      align-items: center;
+      max-width: calc(100% - 60px);
+    }
+    .register__title {
+      margin: 50px 0 80px;
+    }
+    .register__email-input-label,
+    .register__password-input-label,
+    .register__name-input-label {
+      width: 100%;
+    }
+    .register__button {
+      font-size: 12px;
+      line-height: 15px;
+      width: 100%;
+    }
+    .register__link-title {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      padding: 14px 0 0px;
+    }
+    .register__link {
+      font-size: 12px;
+      line-height: 15px;
+      margin-left: 7px;
+    }
+    .register__errorText {
+      font-size: 12px;
+      line-height: 20px;
+      margin: 139px auto 10px;
+    }
+  } */
