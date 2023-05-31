@@ -64,7 +64,7 @@ function SearchForm(props) {
   return (
     <div className="searchform">
       <form className="searchform__form" onSubmit={handleSubmit} ref={formRef} noValidate>
-       
+       <div className="searchform__loupe-icon"></div>
         <input
           type="text"
           className="searchform__input"

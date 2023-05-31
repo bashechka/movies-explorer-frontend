@@ -40,7 +40,7 @@ const MoviesCard = () => {
   return (
     <li className="card">
       <div className="card__element">
-        <p className="card__title">Название</p>
+        <p className="card__title">33 слова о дизайне</p>
         <div className="card__buttons">
           
             <button type="button" className="card__button card__button_active"  />

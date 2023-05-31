@@ -1,7 +1,7 @@
 import Header from '../Header/Header';
-// import SearchForm from './SearchForm/SearchForm';
-// import MoviesCardList from './MoviesCardList/MoviesCardList';
-// import Preloader from './Preloader/Preloader';
+import SearchForm from './SearchForm/SearchForm';
+import MoviesCardList from './MoviesCardList/MoviesCardList';
+import Preloader from './Preloader/Preloader';
 import Footer from '../Footer/Footer';
 import './Movies.css';
 
@@ -25,7 +25,7 @@ function Movies({
     <>
   
       <main className='movies'>
-        {/* <SearchForm
+        <SearchForm
           onSubmit={onSubmit}
           searchKeyword={searchKeyword}
           onCheckbox={onCheckbox}
@@ -49,10 +49,10 @@ function Movies({
             checkedSaveMovies={checkedSaveMovies}
             allSavedMovies={allSavedMovies}
           />
-        )} */}
+        )}
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
