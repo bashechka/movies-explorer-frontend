@@ -2,7 +2,6 @@ import React from 'react';
 import './AboutMe.css';
 import avatar from '../../../images/about_me_photo.png';
 
-
 function AboutMe() {
   return (
     <section className="aboutme" id="aboutme">
