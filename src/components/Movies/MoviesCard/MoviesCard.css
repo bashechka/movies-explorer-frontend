@@ -86,20 +86,23 @@
   .card {
     width: 300px;
     height: 236px;
+    margin: 0 0 7px 0;
+    padding: 0;
   }
-
+ 
   .card__title {
     font-size: 15px;
     line-height: 17px;
-    margin: 9px 0 0 12px;
+    margin: 19px 0 11px 16px;
     max-width: 210px;
     padding: 0;
   }
 
   .card__element {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
   }
 
   .card__image {
@@ -108,6 +111,14 @@
   }
 
   .card__button {
-    margin: 12px 13px 0 0px;
+    position: absolute;
+    top: 24px;
+    right: 14px;
+    margin: 0;
   }
+ 
+  .card__button-container {
+    padding: 35px 0 79px 0;
+  }
+
 }

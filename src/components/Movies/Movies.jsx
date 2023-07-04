@@ -7,7 +7,7 @@ import './Movies.css';
 function Movies({ loggedIn }) {
   const [isLoading, setLoading] = useState(false);
 
-  const movies = [{}, {}, {}, {}, {}, {}, {}, {}];
+  const movies = [{}, {}, {}, {}, {}];
   // const movies = [];
 
   return (

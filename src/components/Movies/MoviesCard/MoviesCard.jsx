@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from "react-router-dom";
-import cardImg from '../../../images/card-pic.jpg';
+import cardImg from '../../../images/card-pic.jpeg';
 import './MoviesCard.css';
 
 const MoviesCard = (props) => {
