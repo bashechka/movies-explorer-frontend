@@ -4,7 +4,7 @@ import MoviesCardList from './MoviesCardList/MoviesCardList';
 import Preloader from './Preloader/Preloader';
 import './Movies.css';
 
-function Movies({loggedIn}) {
+function Movies({ loggedIn }) {
   const [isLoading, setLoading] = useState(false);
 
   const movies = [{}, {}, {}, {}, {}, {}, {}, {}];
@@ -12,10 +12,10 @@ function Movies({loggedIn}) {
 
   return (
     <main className='movies'>
-      <SearchForm/>
+      <SearchForm />
 
       {isLoading ? (
-        <Preloader/>
+        <Preloader />
       ) : (
         <MoviesCardList movies={movies} />
       )}

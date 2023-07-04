@@ -15,7 +15,6 @@ function Navigation({ loggedIn }) {
   }
 
   const navigationClass = (`navigation ${loggedIn ? '' : 'navigation_logout'}`)
-
   const location = useLocation();
   const linkMoviesSidebar = (location.pathname === '/movies') ? "navigation__title-sidebar_active" : "";
   const linkSavedMoviesSidebar = (location.pathname === '/saved-movies') ? "navigation__title-sidebar_active" : "";
@@ -33,7 +32,6 @@ function Navigation({ loggedIn }) {
           </ul>
           <div className="navigation__account-sidebar">
             <Link to='/profile' className="navigation__link navigation__link_logged">Аккаунт</Link>
-            {/* <Link to='/profile' className="navigation__button navigation__button_logged"></ Link> */}
           </div>
           <button className="navigation__button-close" onClick={closeNavigationSidebar}></button>
         </div>

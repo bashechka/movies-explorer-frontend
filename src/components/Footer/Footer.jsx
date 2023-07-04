@@ -3,9 +3,7 @@ import './Footer.css';
 import { useLocation } from 'react-router-dom';
 
 function Footer() {
-
   const location = useLocation();
-
 
   if (location.pathname === '/signup' || location.pathname === '/signin') {
     return (<></>);

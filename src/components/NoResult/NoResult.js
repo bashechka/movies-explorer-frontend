@@ -3,8 +3,6 @@ import './NoResult.css';
 import { useNavigate } from 'react-router-dom';
 
 function NoResult() {
-
-  // Функция навигации кнопки "Назад"
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
 

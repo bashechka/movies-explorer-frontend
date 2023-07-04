@@ -4,9 +4,8 @@ import SearchForm from '../Movies/SearchForm/SearchForm';
 import MoviesCardList from '../Movies/MoviesCardList/MoviesCardList';
 import Preloader from '../Movies/Preloader/Preloader';
 
-function SavedMovies({ loggedIn }) {
+function SavedMovies() {
   const [isLoading, setLoading] = useState(false);
-
   const movies = [{}, {}, {}];
 
   return (

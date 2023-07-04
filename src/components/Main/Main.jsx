@@ -10,11 +10,11 @@ import Portfolio from './Portfolio/Portfolio';
 function Main(props) {
   return (
     <main className="main">
-      <Promo/>
-      <AboutProject/>
-      <Techs/>
-      <AboutMe/>
-      <Portfolio/>
+      <Promo />
+      <AboutProject />
+      <Techs />
+      <AboutMe />
+      <Portfolio />
     </main>
   );
 }

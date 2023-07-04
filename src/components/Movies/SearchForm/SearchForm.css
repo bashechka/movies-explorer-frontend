@@ -20,6 +20,7 @@
   border-radius: 9px;
   background-color: #f9f9f9;
 }
+
 .searchform__loupe-icon {
   width: 34px;
   height: 34px;
@@ -59,14 +60,45 @@
 }
 
 /* плавное изменение прозрачности  placeholder-а при фокусе */
-.searchform__input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
-.searchform__input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
-.searchform__input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
-.searchform__input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
-.searchform__input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
-.searchform__input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
-.searchform__input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
-.searchform__input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+.searchform__input::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.searchform__input::-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.searchform__input:-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.searchform__input:-ms-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.searchform__input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.searchform__input:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.searchform__input:focus:-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.searchform__input:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
 
 .searchform__button {
@@ -86,6 +118,7 @@
   background-position: center;
   background-size: 100%;
 }
+
 /* 
 .searchform__button_disabled {
   background-color: #C4C4C4;
@@ -97,7 +130,7 @@
   margin: 0px 21px 0 12px;
   padding: 0;
   background-color: #e8e8e8;
-} 
+}
 
 .searchform__span {
   font-size: 12px;
@@ -138,16 +171,18 @@
     height: 272px;
     padding: 0;
   }
- 
+
   .searchform__form {
     width: calc(100% - 2 * 22px);
     padding: 0;
     margin: 79px 30px 53px 30px;
   }
+
   .searchform__button {
     top: 19px;
     right: 226px;
   }
+
   .searchform__border {
     width: calc(100% - 2 * 30px);
   }

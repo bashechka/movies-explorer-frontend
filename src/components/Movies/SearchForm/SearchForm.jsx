@@ -6,14 +6,14 @@ function SearchForm() {
   return (
     <div className="searchform">
       <form className="searchform__form" noValidate>
-       <div className="searchform__loupe-icon"></div>
+        <div className="searchform__loupe-icon"></div>
         <input
           type="text"
           className="searchform__input"
           placeholder="Фильм"
           name="name"
         />
-        
+
         <button
           type="button"
           className="searchform__button">
@@ -21,10 +21,10 @@ function SearchForm() {
 
         <div className="searchform__border-vertical"></div>
         <div className="searchform__checkbox">
-        <FilterCheckbox/>
-        <p className="searchform__text">Короткометражки</p>
+          <FilterCheckbox />
+          <p className="searchform__text">Короткометражки</p>
         </div>
-       
+
       </form>
       <div className="searchform__border"></div>
     </div>

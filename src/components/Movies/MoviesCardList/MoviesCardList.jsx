@@ -17,7 +17,6 @@ const MoviesCardList = (props) => {
           </ul>
           <div className="cards__button-container">
             {(location.pathname === "/movies") && <button className='cards__button' type="button" name="more">Ещё</button>}
-            {/* {(location.pathname === "/saved-movies") && <button className='cards__button' type="button" name="more">Больше</button>} */}
           </div>
         </>
       )}
