@@ -10,7 +10,8 @@ const MoviesCard = (props) => {
       <div className="card__element">
         <p className="card__title">33 слова о дизайне</p>
         <div className="card__buttons">
-            {(location.pathname === "/movies") && <button type="button" className="card__button card__button_active" />}
+            {/* {(location.pathname === "/movies") && <button type="button" className="card__button card__button_active" />} */}
+            {(location.pathname === "/movies") && <button type="button" className="card__button card__button_inactive" />}
             {(location.pathname === "/saved-movies") && <button type="button" className="card__button card__button_delete" />}
         </div>
       </div>

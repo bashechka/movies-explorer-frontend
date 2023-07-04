@@ -49,31 +49,25 @@
   transition: opacity 0.4s linear 0.1s;
 }
 
-/* @media screen and (max-width: 760px) {
-  .navtab{
-    padding: 294px 0 0 0;
-  }
-
-  .navtab__list {
-    padding: 0 53px;
-  }
-
-  .navtab__list-item {
-    
-    padding: 0 24px 0 0;
+@media screen and (max-width: 768px) {
+  .navtab {
+    padding: 300px 0 0 0;
   }
 
   .navtab__link {
-    font-size: 11px;
+    font-size: 12px;
   }
-}
-*/
-
+} 
 
 @media screen and (max-width: 540px) {
   /* .navtab__list{
     padding: 0 53px;
   } */
+
+  .navtab {
+    padding: 160px 0 0 0;
+  }
+
   .navtab__list-item {
     width: 82px;
     height: 26px;

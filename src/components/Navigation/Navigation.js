@@ -33,7 +33,7 @@ function Navigation({ loggedIn }) {
           </ul>
           <div className="navigation__account-sidebar">
             <Link to='/profile' className="navigation__link navigation__link_logged">Аккаунт</Link>
-            <Link to='/profile' className="navigation__button navigation__button_logged"></ Link>
+            {/* <Link to='/profile' className="navigation__button navigation__button_logged"></ Link> */}
           </div>
           <button className="navigation__button-close" onClick={closeNavigationSidebar}></button>
         </div>

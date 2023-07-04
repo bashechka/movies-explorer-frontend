@@ -2,6 +2,7 @@
     height: 172px;
     background-color: #fafafa;
     width: 100%;
+    margin: 0;
   }
   
   .footer__text {
@@ -25,7 +26,7 @@
   .footer__navigation {
     display: flex;
     justify-content: space-between;
-    padding: 20px 0 0 0;
+    padding: 20px 0 20px 0;
     margin: 0;
     align-items: center;
   }

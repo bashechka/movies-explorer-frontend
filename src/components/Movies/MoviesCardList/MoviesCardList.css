@@ -26,8 +26,7 @@
 .cards__button {
   width: 100%;
   padding: 10px 0 9px 0;
-  width: 100%;
-  margin: 22px 0 0 0;
+  margin: 39px 0 0 0;
   outline: none;
   border: 1px solid #e8e8e8;
   border-radius: 6px;
@@ -45,12 +44,19 @@
 
 @media all and (max-width: 800px) {
   .cards {
-    margin: 0 30px 0;
+    margin: 67px 0 0 0;
   }
 
   .cards__list {
     grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-    gap: 15px 20px;
+    gap: 36px 30px;
+    margin: 0 30px 0 30px;
+    padding: 0
+  }
+
+  .cards__button-container {
+    max-width: 320px;
+    padding: 33px 0 77px;
   }
 }
 
@@ -60,8 +66,9 @@
   }
 
   .cards__list {
-    padding: 40px 0 0;
-    gap: 18px 20px;
+    padding: 0;
+    gap: 10px 0;
+    grid-template-rows: 0;
   }
 
   .cards__button-container {

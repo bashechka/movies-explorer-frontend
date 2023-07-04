@@ -42,25 +42,24 @@
   z-index: 1;
 }
   
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 768px) {
   .promo {
-    height: 854px;
+    height: 834px;
   }
   .promo__img {
-    width: calc(100% - 40px);
+    width: calc(100vw - 50px);
     height: 834px;
     top: 20px;
     left: 20px;
   }
   .promo__title {
     font-family: inherit;
-    max-width: 680px;
-    padding: 351px 24px 0 24px;
+    max-width: 664px;
+    padding: 370px 24px 0 24px;
     margin: 0 24px 0 24px;
-    font-size: 40px;
+    font-size: 38px;
     line-height: 52px;
   }
-
 }
   
  @media screen and (max-width: 520px) {
@@ -78,6 +77,6 @@
     max-width: 100%;
     font-size: 29px;
     line-height: 37px;
-    padding: 220px 0 0 0;
+    padding: 234px 0 0 0;
   }
 }  

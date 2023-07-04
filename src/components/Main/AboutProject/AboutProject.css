@@ -123,6 +123,7 @@
     .aboutproject {
       width: calc(100% - 2 * 50px);
       height: 585px;
+      padding: 21px 0 0 0;
     }
     .aboutproject__border {
       height: 140px;
@@ -155,6 +156,7 @@
     .aboutproject {
       width: calc(100% - 2 * 18px);
       height: 641px;
+      padding: 0;
     }
     .aboutproject__border {
       height: 120px;
