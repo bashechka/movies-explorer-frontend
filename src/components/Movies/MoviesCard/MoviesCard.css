@@ -5,6 +5,7 @@
   background-color: #FDFDFD;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 17px 3px rgba(221, 221, 221, 1);
 }
 
 .card__image {

@@ -1,5 +1,5 @@
 import React from 'react';
-import link from '../../../images/portfolio_arrow.png';
+import link from '../../../images/portfolio_arrow.svg';
 import './Portfolio.css';
 
 function Portfolio() {

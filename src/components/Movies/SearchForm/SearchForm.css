@@ -1,7 +1,7 @@
 .searchform {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
   width: 100%;
   height: 140px;
   margin: 0;
@@ -28,9 +28,9 @@
   padding: 0;
   /* background-color: #f9f9f9; */
   border: none;
-  background-position: center;
+  /* background-position: center; */
   background: url(../../../images/loupe-icon.svg) no-repeat;
-  background-size: contain;
+  /* background-size: contain; */
 }
 
 .searchform__input {
@@ -118,6 +118,12 @@
   background-size: 100%;
 }
 
+.searchform__button:hover {
+  opacity: 0.7;
+  transition: opacity 0.4s linear 0.1s;
+  cursor: pointer;
+}
+
 /* 
 .searchform__button_disabled {
   background-color: #C4C4C4;
@@ -154,7 +160,7 @@
   line-height: 18px;
   font-weight: 400;
   margin: 0;
-  padding: 0 0 0 13px;
+  padding: 0 30px 0 13px;
 }
 
 .searchform__border {
@@ -165,7 +171,7 @@
   background-color: #e8e8e8;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .searchform {
     height: 272px;
     padding: 0;
@@ -177,13 +183,52 @@
     margin: 79px 30px 53px 30px;
   }
 
+  .searchform__loupe-icon {
+    margin: 19px 10px 19px 19px;
+    padding: 0 20px 0 0;
+  }
+
+  .searchform__border-vertical {
+    width: 1px;
+    height: 40px;
+    margin: 0px 3px 0 12px;
+    padding: 0;
+    background-color: #e8e8e8;
+  }
+
+  .searchform__button {
+    top: 20px;
+    right: 228px;
+  }
+ 
+  .searchform__border {
+    width: calc(100% - 2 * 30px);
+    margin: 109px auto 0px;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  /* .searchform {
+    height: 272px;
+    padding: 0;
+  }
+
+  .searchform__form {
+    width: calc(100% - 2 * 22px);
+    padding: 0;
+    margin: 79px 30px 53px 30px;
+  } */
+
+  .searchform__loupe-icon {
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
   .searchform__button {
     top: 19px;
     right: 226px;
-  }
-
-  .searchform__border {
-    width: calc(100% - 2 * 30px);
   }
 
   .searchform__input {
@@ -204,6 +249,11 @@
   .searchform__checkbox {
     margin: 0px 0 0 5px;
   }
+
+  .searchform__text {
+    font-size: 13px;
+    padding: 0 20px 0 15px;
+  }
 }
 
 @media screen and (max-width: 587px) {
@@ -218,15 +268,15 @@
 
   .searchform__form {
     width: calc(100% - 2 * 10px);
-    margin: 0 10px 0 10px;
+    margin: 44px 10px 0 10px;
     flex-direction: column;
   }
 
   .searchform__input {
-    width: calc(284px - (39px + 19px));
+    width: calc(100% - (19px + 34px));
     height: 72px;
     padding: 0;
-    margin: 29px 36px 0px 0px;
+    margin: 29px 36px 0px 29px;
   }
 
   .searchform__checkbox {
@@ -239,15 +289,11 @@
 
   .searchform__border {
     width: calc(100% - 2 * 14px);
+    margin: 110px auto 0;
   }
 
   .searchform__button {
     right: 18px;
-  }
-
-  .searchform__loupe-icon {
-    visibility: hidden;
-    margin: 0;
   }
 
   .searchform__border-vertical {
