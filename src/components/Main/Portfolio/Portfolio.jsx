@@ -6,7 +6,7 @@ function Portfolio() {
   return (
     <section className="portfolio">
       <h4 className="portfolio__title">Портфолио</h4>
-      <a href="https://bashechka.github.io/how-to-learn/" className="portfolio__link" target="_blank" rel="noreferrer">
+      <a href="https://github.com/bashechka/how-to-learn" className="portfolio__link" target="_blank" rel="noreferrer">
         <p className="portfolio__subtitle">Статичный сайт</p>
         <img className="portfolio__img" src={link} alt="Ссылка" />
       </a>

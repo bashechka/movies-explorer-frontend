@@ -12,6 +12,7 @@ function SearchForm() {
             className="searchform__input"
             placeholder="Фильм"
             name="name"
+            required
           />
 
           <button
