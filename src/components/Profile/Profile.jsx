@@ -32,8 +32,8 @@ function Profile() {
           </label>
         </fieldset >
         <div className="profile__buttons">
-          <button type="submit" className="profile__button profile__edit">Редактировать</button>
-          <button type="button" className="profile__button profile__checkout">Выйти из аккаунта</button>
+          <button type="submit" className="profile__button profile__button-edit">Редактировать</button>
+          <button type="button" className="profile__button profile__button-checkout">Выйти из аккаунта</button>
         </div>
       </form>
     </div>

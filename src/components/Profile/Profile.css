@@ -101,14 +101,14 @@
   transition: opacity 0.4s linear 0.1s;
 }
 
-.profile__checkout {
+.profile__button-checkout {
   padding: 16px 0 0 0;
   margin: 0;
   color: #ee3465;
 }
 
-.profile__change{
-  color: #919191;
+.profile__button-edit{
+  color: black;
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
