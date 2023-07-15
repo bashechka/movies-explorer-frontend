@@ -1,0 +1,125 @@
+.card {
+  width: 364px;
+  height: 271px;
+  padding: 0;
+  background-color: #FDFDFD;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 17px 3px rgba(221, 221, 221, 1);
+}
+
+.card__image {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 203px;
+}
+
+.card__element {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__title {
+  max-width: 220px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18.15px;
+  margin: 0;
+  padding: 14px 0 0 14px;
+}
+
+.card__button {
+  margin: 19px 14px 0 0;
+  height: 30px;
+  width: 30px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  transition: opacity .2s linear;
+}
+
+.card__button:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+.card__button_inactive {
+  background: #f9f9f9 url(../../../images/card-save-off.svg) center no-repeat;
+}
+
+.card__button_active {
+  background: #f9f9f9 url(../../../images/card-save.svg) center no-repeat;
+}
+
+.card__button_delete {
+  width: 30px;
+  height: 30px;
+  background: #f9f9f9 url(../../../images/card-delete.svg) center no-repeat;
+}
+
+.card__duration {
+  margin: 0;
+  padding: 0 0 12px 14px;
+  color: #A0A0A0;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    width: 339px;
+    height: 258px;
+    margin: 0px 0 0px 14px;
+  }
+
+  .card__image {
+    width: 339px;
+    height: 190px;
+  }
+
+  .card__title {
+    max-width: 290px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .card {
+    width: 300px;
+    height: 236px;
+    margin: 0 0 7px 0;
+    padding: 0;
+  }
+ 
+  .card__title {
+    font-size: 15px;
+    line-height: 17px;
+    margin: 19px 0 11px 16px;
+    max-width: 210px;
+    padding: 0;
+  }
+
+  .card__element {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+  }
+
+  .card__image {
+    width: 300px;
+    height: 168px;
+  }
+
+  .card__button {
+    position: absolute;
+    top: 24px;
+    right: 14px;
+    margin: 0;
+  }
+ 
+  .card__button-container {
+    padding: 35px 0 79px 0;
+  }
+
+}
