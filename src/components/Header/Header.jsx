@@ -5,7 +5,7 @@ import logo from '../../images/logo.svg';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 
-const Header = (props) => {
+const Header = ({ loggedIn }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -13,7 +13,19 @@ const Header = (props) => {
     return (<></>);
   } else if (location.pathname === '/signin') {
     return (<></>);
-  } else if (location.pathname === '/') {
+  } else if (loggedIn) {
+    return (
+      <header className="movies-header">
+        <div className="movies-header__wrapper">
+          <img className="header__logo" src={logo} alt="Логотип" onClick={() => navigate('/')} />
+          <Link className="movies-header__link" to="/movies">Фильмы</Link>
+          <Link className="movies-header__link" to="/saved-movies">Сохраненные фильмы</Link>
+          <Navigation loggedIn={loggedIn} />
+        </div>
+        <button className="movies-header__button" onClick={() => navigate('/profile')}>Аккаунт</button>
+      </header>
+    );
+  } else {
     return (
       <header className="header">
         <img className="header__logo" src={logo} alt="Логотип" onClick={() => navigate('/')} />
@@ -23,18 +35,6 @@ const Header = (props) => {
         </div>
       </header>
     )
-  } else {
-    return (
-      <header className="movies-header">
-        <div className="movies-header__wrapper">
-          <img className="header__logo" src={logo} alt="Логотип" onClick={() => navigate('/')} />
-          <Link className="movies-header__link" to="/movies">Фильмы</Link>
-          <Link className="movies-header__link" to="/saved-movies">Сохраненные фильмы</Link>
-          <Navigation loggedIn={props.loggedIn} />
-        </div>
-        <button className="movies-header__button" onClick={() => navigate('/profile')}>Аккаунт</button>
-      </header>
-    );
   }
 };
 

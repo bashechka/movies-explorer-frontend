@@ -3,6 +3,15 @@
   padding: 0;
 }
 
+.cards__text {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 50px;
+  line-height: 35px;
+}
+
 .cards__list {
   width: calc(100% - 70 * 2);
   display: grid;
