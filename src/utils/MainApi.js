@@ -82,7 +82,8 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-  url: 'http://127.0.0.1:3000',
+  // url: 'http://127.0.0.1:3000',
+  url: 'https://api.bashechka.nomoredomains.work',
   headers: {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
