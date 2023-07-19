@@ -6,18 +6,20 @@ function Profile({ onUpdateProfile, onSignOut, responseMessage }) {
   const nameRegEx = /^[а-яА-ЯёЁa-zA-Z -]+$/;
   const emailRegEx = /^([\w]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
-  const [formValid, setFormValid] = useState(false);
-  const [statusMessage, setStatusMessage] = useState("");
-
-  const [name, setName] = useState('');
-  const [nameError, setNameError] = useState('');
-
-  const [email, setEmail] = useState('');
-  const [emailError, setEmailError] = useState('');
-
   const currentUser = useContext(CurrentUserContext);
 
+  const [formValid, setFormValid] = useState(false);
+  const [formEnabled, setFormEnabled] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+
+  const [name, setName] = useState(currentUser.name);
+  const [nameError, setNameError] = useState('');
+
+  const [email, setEmail] = useState(currentUser.email);
+  const [emailError, setEmailError] = useState('');
+
   function handleSubmit(e) {
+    setFormEnabled(false);
     e.preventDefault();
     onUpdateProfile({ name, email });
   }
@@ -25,11 +27,15 @@ function Profile({ onUpdateProfile, onSignOut, responseMessage }) {
   useEffect(() => {
     setName(currentUser.name);
     setEmail(currentUser.email);
-
-    if (currentUser.name === name && currentUser.email === email) {
-      setFormValid(false);
-    }
   }, [currentUser.name, currentUser.email]);
+
+  useEffect(() => {
+    if (currentUser.name === name && currentUser.email === email) {
+      setFormEnabled(false);
+    } else {
+      setFormEnabled(true);
+    }
+  }, [name, email, currentUser.name, currentUser.email]);
 
   function handleChangeName(e) {
     setName(e.target.value);
@@ -75,7 +81,7 @@ function Profile({ onUpdateProfile, onSignOut, responseMessage }) {
   return (
     <div>
       <form className="profile" onSubmit={handleSubmit}>
-        <h2 className="profile__greetings">Привет, Имя!</h2>
+        <h2 className="profile__greetings">Привет, {name}!</h2>
         <fieldset className="profile__user">
           <label className="profile__data">
             <p className="profile__data-field">Имя</p>
@@ -110,7 +116,7 @@ function Profile({ onUpdateProfile, onSignOut, responseMessage }) {
         </fieldset >
         <div className="profile__buttons">
           <span className="form__status-request">{statusMessage}</span>
-          <button type="submit" disabled={!formValid} className={`profile__button ${formValid ? "profile__button-edit" : "profile__button_disabled"}`}>Редактировать</button>
+          <button type="submit" disabled={!formValid || !formEnabled} className={`profile__button ${formValid && formEnabled ? "profile__button-edit" : "profile__button_disabled"}`}>Редактировать</button>
           <button type="button" className="profile__button profile__button-checkout" onClick={onSignOut} >Выйти из аккаунта</button>
         </div>
       </form>

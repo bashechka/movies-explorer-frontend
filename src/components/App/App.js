@@ -23,7 +23,11 @@ function App() {
 
   React.useEffect(() => {
     checkAuthUser();
-  }, []);
+  }, [loggedIn]);
+
+  React.useEffect(() => {
+    setResponseMessage(null);
+  }, [navigate]);
 
   function checkAuthUser() {
     const token = localStorage.getItem('token');
@@ -32,8 +36,8 @@ function App() {
       mainApi.getUserInfo()
         .then((user) => {
           if (user && user.data) {
-            setLoggedIn(true);
             setCurrentUser(user.data);
+            setLoggedIn(true);
           } else {
             signOut();
           }
@@ -50,7 +54,11 @@ function App() {
   function signOut() {
     setLoggedIn(false);
     localStorage.removeItem('token');
-    navigate('/signin');
+    localStorage.removeItem('searchIsShortOnly');
+    localStorage.removeItem('searchQuery');
+    localStorage.removeItem('searchMovies');
+    localStorage.removeItem('savedMovies');
+    navigate('/');
     mainApi.setToken('');
     setCurrentUser(defaultCurrentUser);
   }
@@ -98,7 +106,8 @@ function App() {
   function handleUpdateProfile(data) {
     mainApi.updateUserProfile(data)
       .then((result) => {
-        if (result) {
+        if (result.data) {
+          setCurrentUser(result.data);
           setResponseMessage('Профиль успешно сохранен');
         } else {
           console.log(data);

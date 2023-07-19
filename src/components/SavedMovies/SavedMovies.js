@@ -11,14 +11,16 @@ function SavedMovies() {
   const [isShortOnly, setShortOnly] = useState(false);
 
   const [moviesMessage, setMoviesMessage] = useState('');
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(JSON.parse(localStorage.getItem('savedMovies') || '[]'));
   const [moviesFiltered, setMoviesFiltered] = useState([]);
 
   useEffect(() => {
     setLoading(true);
     const token = localStorage.getItem('token');
     mainApi.setToken(token);
-    loadMovies();
+    if (movies.length === 0) {
+      loadMovies();
+    }
   }, []);
 
   useEffect(() => {
@@ -52,6 +54,7 @@ function SavedMovies() {
       .then((result) => {
         if (result.data) {
           setMovies(result.data);
+          localStorage.setItem('savedMovies', JSON.stringify(result.data));
         }
       })
       .catch((err) => {
@@ -71,7 +74,9 @@ function SavedMovies() {
   function handleSaveToggle(movie) {
     mainApi.deleteMovie(movie._id)
       .then(() => {
-        setMovies(movies.filter(m => m.movieId != movie.movieId));
+        const data = movies.filter(m => m.movieId != movie.movieId);
+        setMovies(data);
+        localStorage.setItem('savedMovies', JSON.stringify(data));
       })
       .catch((err) => {
         console.log(err);

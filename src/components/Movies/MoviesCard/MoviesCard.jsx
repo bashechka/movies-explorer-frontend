@@ -1,12 +1,13 @@
 import React from 'react';
 import { useLocation } from "react-router-dom";
+import { SHORT_MOVIE_LENGTH } from '../../../utils/constants';
 import './MoviesCard.css';
 
 const MoviesCard = ({ movie, onSaveToggle }) => {
   const location = useLocation();
 
-  const hours = movie.duration >= 60 ? `${Math.floor(movie.duration / 60)} ч ` : '';
-  const minutes = movie.duration === 60 ? '' : `${movie.duration % 60} м`;
+  const hours = movie.duration >= SHORT_MOVIE_LENGTH ? `${Math.floor(movie.duration / SHORT_MOVIE_LENGTH)} ч ` : '';
+  const minutes = movie.duration === SHORT_MOVIE_LENGTH ? '' : `${movie.duration % SHORT_MOVIE_LENGTH} м`;
 
   return (
     <li className="card">

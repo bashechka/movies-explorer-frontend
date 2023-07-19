@@ -4,6 +4,18 @@ import MoviesCardList from './MoviesCardList/MoviesCardList';
 import Preloader from './Preloader/Preloader';
 import mainApi from '../../utils/MainApi'
 import moviesApi from '../../utils/MoviesApi'
+import {
+  SHORT_MOVIE_LENGTH,
+  WINDOW_MIN_SIZE,
+  WINDOW_MEDIUM_SIZE,
+  MIN_SIZE_MAX_MOVIES,
+  MIN_SIZE_MORE_MOVIES,
+  MEDIUM_SIZE_MAX_MOVIES,
+  MEDIUM_SIZE_MORE_MOVIES,
+  MAX_SIZE_MAX_MOVIES,
+  MAX_SIZE_MORE_MOVIES,
+  MOVIES_API_URL
+} from '../../utils/constants';
 import './Movies.css';
 
 function Movies() {
@@ -13,7 +25,9 @@ function Movies() {
 
   const [moviesMessage, setMoviesMessage] = useState('');
   const [moviesServer, setMoviesServer] = useState(JSON.parse(localStorage.getItem('searchMovies') || '[]'));
-  const [moviesSaved, setMoviesSaved] = useState(new Map());
+  const [moviesSaved, setMoviesSaved] = useState(new Map(
+    JSON.parse(localStorage.getItem('savedMovies') || '[]').map(r => [r.movieId, r])
+  ));
   const [moviesFiltered, setMoviesFiltered] = useState([]);
 
   const [maxMovies, setMaxMovies] = useState(0);
@@ -24,7 +38,9 @@ function Movies() {
     setLoading(true);
     const token = localStorage.getItem('token');
     mainApi.setToken(token);
-    loadSavedMovies();
+    if (moviesSaved.length === 0) {
+      loadSavedMovies();
+    }
     window.addEventListener('resize', updateMaxMovies);
   }, []);
 
@@ -34,15 +50,15 @@ function Movies() {
   }, [query, isShortOnly, moviesServer, moviesSaved]);
 
   function updateMaxMovies() {
-    if (window.innerWidth < 767) {
-      setMaxMovies(5);
-      setMoreMoviesCount(1);
-    } else if (window.innerWidth < 990) {
-      setMaxMovies(8);
-      setMoreMoviesCount(2);
+    if (window.innerWidth < WINDOW_MIN_SIZE) {
+      setMaxMovies(MIN_SIZE_MAX_MOVIES);
+      setMoreMoviesCount(MIN_SIZE_MORE_MOVIES);
+    } else if (window.innerWidth < WINDOW_MEDIUM_SIZE) {
+      setMaxMovies(MEDIUM_SIZE_MAX_MOVIES);
+      setMoreMoviesCount(MEDIUM_SIZE_MORE_MOVIES);
     } else {
-      setMaxMovies(12);
-      setMoreMoviesCount(3);
+      setMaxMovies(MAX_SIZE_MAX_MOVIES);
+      setMoreMoviesCount(MAX_SIZE_MORE_MOVIES);
     }
   }
 
@@ -59,7 +75,7 @@ function Movies() {
       || m.nameEN.toLowerCase().includes(query)
     ));
     if (isShortOnly) {
-      filtered = filtered.filter(m => m.duration <= 40);
+      filtered = filtered.filter(m => m.duration <= SHORT_MOVIE_LENGTH);
     }
 
     if (filtered.length === 0) {
@@ -74,7 +90,7 @@ function Movies() {
       if (saved) {
         m.savedId = saved._id;
       }
-      m.thumbnail = 'https://api.nomoreparties.co/' + m.image.url;
+      m.thumbnail = MOVIES_API_URL + m.image.url;
       m.key = m.id;
     });
     setMoviesFiltered(filtered);
@@ -91,11 +107,14 @@ function Movies() {
   }
 
   function handleSaveToggle(movie) {
-    if (movie.saved) {
-      mainApi.deleteMovie(movie.savedId)
+    const saved = moviesSaved.get(movie.id);
+
+    if (saved) {
+      mainApi.deleteMovie(saved._id)
         .then(() => {
           moviesSaved.delete(movie.id);
           setMoviesSaved(new Map(moviesSaved));
+          localStorage.setItem('savedMovies', JSON.stringify(Array.from(moviesSaved.values())));
         })
         .catch((err) => {
           console.log(err);
@@ -118,8 +137,9 @@ function Movies() {
       }
       mainApi.createMovie(myMovie)
         .then((result) => {
-          moviesSaved.set(movie.id, result);
+          moviesSaved.set(movie.id, result.data);
           setMoviesSaved(new Map(moviesSaved));
+          localStorage.setItem('savedMovies', JSON.stringify(Array.from(moviesSaved.values())));
         })
         .catch((err) => {
           console.log(err);
@@ -132,11 +152,8 @@ function Movies() {
     return mainApi.getMovies()
       .then((result) => {
         if (result.data) {
-          setMoviesSaved(new Map(
-            result.data.map(r => {
-              return [r.movieId, r];
-            }),
-          ));
+          setMoviesSaved(new Map(result.data.map(r => [r.movieId, r])));
+          localStorage.setItem('savedMovies', JSON.stringify(result.data));
         }
       })
       .catch((err) => {
