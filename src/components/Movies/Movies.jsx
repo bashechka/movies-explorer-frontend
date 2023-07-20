@@ -35,10 +35,9 @@ function Movies() {
 
   useEffect(() => {
     updateMaxMovies();
-    setLoading(true);
     const token = localStorage.getItem('token');
     mainApi.setToken(token);
-    if (moviesSaved.length === 0) {
+    if (moviesSaved.size === 0) {
       loadSavedMovies();
     }
     window.addEventListener('resize', updateMaxMovies);
@@ -46,7 +45,6 @@ function Movies() {
 
   useEffect(() => {
     handleFiltering();
-    setLoading(false);
   }, [query, isShortOnly, moviesServer, moviesSaved]);
 
   function updateMaxMovies() {
@@ -167,10 +165,12 @@ function Movies() {
       .then((result) => {
         setMoviesServer(result);
         localStorage.setItem('searchMovies', JSON.stringify(result));
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
         setMoviesMessage('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз');
+        setLoading(false);
       });
   }
 

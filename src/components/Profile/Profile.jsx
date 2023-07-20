@@ -81,7 +81,7 @@ function Profile({ onUpdateProfile, onSignOut, responseMessage }) {
   return (
     <div>
       <form className="profile" onSubmit={handleSubmit}>
-        <h2 className="profile__greetings">Привет, {name}!</h2>
+        <h2 className="profile__greetings">Привет, {currentUser.name}!</h2>
         <fieldset className="profile__user">
           <label className="profile__data">
             <p className="profile__data-field">Имя</p>
