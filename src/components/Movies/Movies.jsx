@@ -97,7 +97,6 @@ function Movies() {
   function handleSearchForm({ query, isShortOnly }) {
     setQuery(query);
     setShortOnly(isShortOnly);
-    setLoading(true);
 
     if (moviesServer.length === 0) {
       loadMoviesFromServer();
@@ -161,6 +160,7 @@ function Movies() {
   }
 
   function loadMoviesFromServer() {
+    setLoading(true);
     return moviesApi.getMovies()
       .then((result) => {
         setMoviesServer(result);
