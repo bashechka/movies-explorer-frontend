@@ -1,0 +1,10 @@
+export const SHORT_MOVIE_LENGTH = 60;
+export const WINDOW_MIN_SIZE = 767;
+export const WINDOW_MEDIUM_SIZE = 990;
+export const MIN_SIZE_MAX_MOVIES = 5;
+export const MIN_SIZE_MORE_MOVIES = 1;
+export const MEDIUM_SIZE_MAX_MOVIES = 8;
+export const MEDIUM_SIZE_MORE_MOVIES = 2;
+export const MAX_SIZE_MAX_MOVIES = 12;
+export const MAX_SIZE_MORE_MOVIES = 3;
+export const MOVIES_API_URL = 'https://api.nomoreparties.co/';
